@@ -1,4 +1,4 @@
-package com.designpatterns.bigtalk.singleton;
+package com.designpatterns.bigtalk.creative.singleton;
 
 /**
  * @author: jiangjiabin
