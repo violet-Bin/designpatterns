@@ -7,6 +7,7 @@ package com.designpatterns.bigtalk.creative.factory.simple;
  */
 public class WechatPay implements Pay {
 
+    @Override
     public void unifiedorder() {
         System.out.println("Wechat pay---");
 

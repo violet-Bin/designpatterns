@@ -7,7 +7,7 @@ package com.designpatterns.bigtalk.creative.factory.simple;
  */
 public class AliPay implements Pay {
 
-
+    @Override
     public void unifiedorder() {
         System.out.println("Ali pay---");
     }
