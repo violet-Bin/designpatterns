@@ -10,14 +10,14 @@ class Client
 HouseBuilder : +house:House
 HouseBuilder : +buildBasic()
 HouseBuilder : +buildWalls()
-HouseBuilder : +getResult()
+HouseBuilder : +getResult():House
 
 CommonHouse : +buildBasic()
 CommonHouse : +buildWalls()
-CommonHouse : +getResult()
+CommonHouse : +getResult():House
 HighHouse : +buildBasic()
 HighHouse : +buildWalls()
-HighHouse : +getResult()
+HighHouse : +getResult():House
 
 HouseDirector : -builder:HouseBuilder
 HouseDirector : +constructHouse():House
