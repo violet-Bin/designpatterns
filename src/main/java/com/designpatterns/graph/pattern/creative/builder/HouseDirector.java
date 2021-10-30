@@ -7,7 +7,7 @@ package com.designpatterns.graph.pattern.creative.builder;
  */
 public class HouseDirector {
 
-    HouseBuilder houseBuilder;
+    private HouseBuilder houseBuilder;
 
     public HouseDirector(HouseBuilder houseBuilder) {
         this.houseBuilder = houseBuilder;

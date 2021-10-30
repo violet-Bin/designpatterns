@@ -14,10 +14,12 @@ HouseBuilder : +getResult()
 
 CommonHouse : +buildBasic()
 CommonHouse : +buildWalls()
+CommonHouse : +getResult()
 HighHouse : +buildBasic()
 HighHouse : +buildWalls()
+HighHouse : +getResult()
 
-HouseDirector : +builder:HouseBuilder
+HouseDirector : -builder:HouseBuilder
 HouseDirector : +constructHouse():House
 
 HouseBuilder <|.. CommonHouse
