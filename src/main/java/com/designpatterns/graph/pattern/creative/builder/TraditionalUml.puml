@@ -1,0 +1,26 @@
+@startuml
+
+interface House
+class CommonHouse
+class HighHouse
+class Client
+
+House : +buildBasic(house:House):void
+House : +buildBasic(house:House):void
+House : +getHouse():House
+CommonHouse : +buildBasic(house:House):void
+CommonHouse : +buildBasic(house:House):void
+CommonHouse : +getHouse():House
+HighHouse : +buildBasic(house:House):void
+HighHouse : +buildBasic(house:House):void
+HighHouse : +getHouse():House
+
+
+House <|.. CommonHouse
+House <|.. HighHouse
+
+CommonHouse <.. Client
+HighHouse <.. Client
+
+
+@enduml

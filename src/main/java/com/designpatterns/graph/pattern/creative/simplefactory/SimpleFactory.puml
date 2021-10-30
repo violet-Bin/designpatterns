@@ -1,0 +1,17 @@
+@startuml
+
+class OrderPizza
+class SimpleFactory
+interface Pizza
+class CheesePizza
+class GreekPizza
+
+
+Pizza <|.. CheesePizza
+Pizza <|.. GreekPizza
+
+SimpleFactory <.. OrderPizza
+CheesePizza <.. SimpleFactory
+GreekPizza <.. SimpleFactory
+
+@enduml

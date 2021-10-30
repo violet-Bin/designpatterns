@@ -1,0 +1,34 @@
+@startuml
+
+interface House
+interface HouseBuilder
+class CommonHouse
+class HighHouse
+class HouseDirector
+class Client
+
+HouseBuilder : +house:House
+HouseBuilder : +buildBasic()
+HouseBuilder : +buildWalls()
+HouseBuilder : +getResult()
+
+CommonHouse : +buildBasic()
+CommonHouse : +buildWalls()
+HighHouse : +buildBasic()
+HighHouse : +buildWalls()
+
+HouseDirector : +builder:HouseBuilder
+HouseDirector : +constructHouse():House
+
+HouseBuilder <|.. CommonHouse
+HouseBuilder <|.. HighHouse
+
+HouseBuilder *-- House
+HouseBuilder --o HouseDirector
+
+HouseDirector <.. Client
+CommonHouse <.. Client
+HighHouse <.. Client
+
+
+@enduml

@@ -1,0 +1,37 @@
+@startuml
+
+interface OrderFactory
+class BJOrderFactory
+class LDOrderFactory
+class OrderPizza
+
+interface Pizza
+class BJCheesePizza
+class BJPepperPizza
+class LDCheesePizza
+class LDPepperPizza
+
+OrderFactory : +createPizza(): Pizza
+BJOrderFactory : +createPizza(): Pizza
+LDOrderFactory : +createPizza(): Pizza
+OrderPizza : +getOrderPizzaFactory():OrderFactory
+
+
+Pizza <|.. BJCheesePizza
+Pizza <|.. BJPepperPizza
+Pizza <|.. LDCheesePizza
+Pizza <|.. LDPepperPizza
+
+OrderFactory <|.. BJOrderFactory
+OrderFactory <|.. LDOrderFactory
+
+BJCheesePizza <.. BJOrderFactory
+BJPepperPizza <.. BJOrderFactory
+LDCheesePizza <.. LDOrderFactory
+LDPepperPizza <.. LDOrderFactory
+
+Pizza <.. OrderFactory
+OrderFactory <.. OrderPizza
+
+
+@enduml
