@@ -1,0 +1,20 @@
+@startuml
+
+interface Interface1
+abstract class AbsAdapter
+class AImpl
+
+Interface1 <.. AbsAdapter
+AbsAdapter <.. AImpl
+
+Interface1 : +method1()
+Interface1 : +method1()
+Interface1 : +method1()
+AbsAdapter : +method1()
+AbsAdapter : +method1()
+AbsAdapter : +method1()
+
+AImpl : +method1()
+
+
+@enduml
