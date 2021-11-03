@@ -8,11 +8,11 @@ Interface1 <.. AbsAdapter
 AbsAdapter <.. AImpl
 
 Interface1 : +method1()
-Interface1 : +method1()
-Interface1 : +method1()
+Interface1 : +method2()
+Interface1 : +method3()
 AbsAdapter : +method1()
-AbsAdapter : +method1()
-AbsAdapter : +method1()
+AbsAdapter : +method2()
+AbsAdapter : +method3()
 
 AImpl : +method1()
 

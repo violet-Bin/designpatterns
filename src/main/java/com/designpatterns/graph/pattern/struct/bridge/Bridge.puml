@@ -1,0 +1,25 @@
+@startuml
+
+interface Brand
+class Huawei
+class Xiaomi
+abstract Phone
+class BigPhone
+class SmallPhone
+class Client
+
+Phone <|-- BigPhone
+Phone <|-- SmallPhone
+Brand <|.. Huawei
+Brand <|.. Xiaomi
+
+Phone o-- Brand
+
+Client ..> Phone
+Client ..> Brand
+
+Phone : #brand:Brand
+Phone : +toCall(brand: Brand):void
+Brand : +call(msg: String):void
+
+@enduml
