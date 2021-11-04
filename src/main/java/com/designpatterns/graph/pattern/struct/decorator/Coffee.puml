@@ -1,0 +1,34 @@
+@startuml
+
+abstract Drink
+class Decorator
+class Espresso
+class Americano
+class Milk
+class Soy
+
+
+Drink <|--o Decorator
+Drink <|-- Espresso
+Drink <|-- Americano
+Decorator <|-- Milk
+Decorator <|-- Soy
+
+Decorator : #Drink:drink
+
+Drink : #desc:String
+Drink : +getDesc():String
+Drink : +cost()
+Decorator : +getDesc():String
+Decorator : +cost()
+Espresso : +getDesc():String
+Espresso : +cost()
+Americano : +getDesc():String
+Americano : +cost()
+Milk : +getDesc():String
+Milk : +cost()
+Soy : +getDesc():String
+Soy : +cost()
+
+
+@enduml
