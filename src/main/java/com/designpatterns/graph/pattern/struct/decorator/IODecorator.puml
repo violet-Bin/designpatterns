@@ -1,0 +1,18 @@
+@startuml
+
+abstract InputStream
+class FileInputStream
+class ByteArrayInputStream
+class FilterInputStream
+
+InputStream <|-- ByteArrayInputStream
+InputStream <|-- FileInputStream
+InputStream <|--o FilterInputStream
+
+
+FilterInputStream <|-- BufferedInputStream
+FilterInputStream <|-- DataInputStream
+
+
+
+@enduml

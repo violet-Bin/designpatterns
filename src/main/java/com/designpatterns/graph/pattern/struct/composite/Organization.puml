@@ -1,0 +1,27 @@
+@startuml
+
+abstract class Organization
+class University
+class Collage
+class Department
+
+Organization <|-- University
+Organization <|-- Collage
+Organization <|-- Department
+
+University o-- Collage
+Collage o-- Department
+
+Organization : +add()
+Organization : +remove()
+Organization : +list()
+University : +add()
+University : +remove()
+University : +list()
+Collage : +add()
+Collage : +remove()
+Collage : +list()
+Department : +list()
+
+
+@enduml
