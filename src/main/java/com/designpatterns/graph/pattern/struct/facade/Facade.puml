@@ -1,0 +1,15 @@
+@startuml
+
+abstract class Facade
+class SubSystem1
+class SubSystem2
+class SubSystem3
+class Client
+
+Facade <.. Client
+Facade o-- SubSystem1
+Facade o-- SubSystem2
+Facade o-- SubSystem3
+
+
+@enduml

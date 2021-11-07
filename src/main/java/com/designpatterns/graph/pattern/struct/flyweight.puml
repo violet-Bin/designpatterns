@@ -1,0 +1,19 @@
+@startuml
+
+abstract class FlyWeight
+class ConcreteFlyWeight
+class UnsharedConcreteFlyWeight
+class FlyWeightFactory
+class Client
+
+FlyWeight : +operation()
+FlyWeightFactory : +getFlyWeight(key)
+
+FlyWeightFactory o--> FlyWeight
+FlyWeight <|-- ConcreteFlyWeight
+FlyWeight <|-- UnsharedConcreteFlyWeight
+FlyWeightFactory <-- Client
+ConcreteFlyWeight <-- Client
+UnsharedConcreteFlyWeight <-- Client
+
+@enduml

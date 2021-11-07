@@ -1,0 +1,11 @@
+@startuml
+
+class ProxyObject
+class Client
+class TargetObject
+
+ProxyObject <-- Client
+TargetObject <-- ProxyObject
+
+
+@enduml
