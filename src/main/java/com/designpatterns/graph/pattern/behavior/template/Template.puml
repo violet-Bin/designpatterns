@@ -1,0 +1,29 @@
+@startuml
+
+abstract class AbsClass
+class ConcreteClassA
+class ConcreteClassB
+class Client
+
+AbsClass : +template()
+AbsClass : +operation1()
+AbsClass : +operation2()
+AbsClass : +operation3()
+AbsClass : +hook()
+
+ConcreteClassA : +operation1()
+ConcreteClassA : +operation2()
+ConcreteClassA : +operation3()
+ConcreteClassA : +hook()
+ConcreteClassB : +hook()
+
+AbsClass <|-- ConcreteClassA
+AbsClass <|-- ConcreteClassB
+
+ConcreteClassA <.. Client
+ConcreteClassB <.. Client
+
+
+
+
+@enduml

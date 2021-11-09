@@ -1,0 +1,34 @@
+@startuml
+
+interface Command
+class ConcreteCommand
+class NoCommand
+class Receiver
+class Invoker
+class Client
+
+Command : +execute()
+Command : +undo()
+
+ConcreteCommand : -receiver: Receiver
+ConcreteCommand : +execute()
+ConcreteCommand : +undo()
+
+Receiver : +action()
+
+Invoker : -commands: Command[]
+Invoker : -undoCommand: Command
+Invoker : +command1()
+Invoker : +command2()
+
+Invoker o--Command
+Command <|.. ConcreteCommand
+Command <|.. NoCommand
+ConcreteCommand o-- Receiver
+Invoker <.. Client
+ConcreteCommand <.. Client
+Receiver <.. Client
+
+
+
+@enduml
