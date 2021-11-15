@@ -1,26 +1,25 @@
 @startuml
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
+abstract Mediator
+abstract Colleague
+class ConcreteMediator
+class ConcreteColleague
 
-List <|-- AbstractList
-Collection <|-- AbstractCollection
+Mediator <|-- ConcreteMediator
+Colleague <|-- ConcreteColleague
 
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
+Mediator -- Colleague
 
-class ArrayList {
-Object[] elementData
-size()
-}
+Mediator : +Register()
+Mediator : +GetMessage()
+Mediator : +SendMessage()
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
-}
+Colleague : +SendMessage()
+
+
+ConcreteMediator : -colleagues:HashMap
+Colleague : +getMediator(): Mediator
+
+
 
 @enduml
