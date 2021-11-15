@@ -1,0 +1,30 @@
+@startuml
+
+
+interface Subject
+class WeatherData
+interface Observer
+class Baidu
+class Tencent
+
+Observer <|.. Baidu
+Observer <|.. Tencent
+
+Subject <|.. WeatherData
+WeatherData o.. Observer
+
+Subject : +register()
+Subject : +remove()
+Subject : +notifyAll()
+
+WeatherData : -observers: List<Object>
+WeatherData : +register()
+WeatherData : +remove()
+WeatherData : +notifyAll()
+
+Observer : +update()
+Baidu : +update()
+Tencent : +update()
+
+
+@enduml

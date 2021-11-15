@@ -1,0 +1,36 @@
+@startuml
+
+interface Iterator
+interface Aggregate
+class ConcreteIterator1
+class ConcreteIterator2
+class ConcreteAggregate1
+class ConcreteAggregate2
+
+
+Iterator <|.. ConcreteIterator1
+Iterator <|.. ConcreteIterator2
+Aggregate <|.. ConcreteAggregate1
+Aggregate <|.. ConcreteAggregate2
+
+Iterator : +hasNext(): boolean
+Iterator : +next(): E
+Iterator : +remove(): void
+ConcreteIterator1 : +hasNext(): boolean
+ConcreteIterator1 : +next(): E
+ConcreteIterator1 : +remove(): void
+ConcreteIterator2 : +hasNext(): boolean
+ConcreteIterator2 : +next(): E
+ConcreteIterator2 : +remove(): void
+
+Aggregate : +createIterator(): Iterator
+ConcreteAggregate1 : eles(): ArrayList
+ConcreteAggregate1 : createIterator(): Iterator
+ConcreteAggregate2 : eles(): int[]
+ConcreteAggregate2 : createIterator(): Iterator
+
+ConcreteIterator1 <.. ConcreteAggregate1
+ConcreteIterator2 <.. ConcreteAggregate2
+
+
+@enduml

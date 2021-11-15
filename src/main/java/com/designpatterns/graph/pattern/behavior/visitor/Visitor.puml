@@ -1,0 +1,29 @@
+@startuml
+
+abstract Visitor
+class ConcreteVisitor
+abstract Element
+class ConcreteElement
+class ObjectStructure
+class Client
+
+Visitor : +operation1()
+Visitor : +operation2()
+ConcreteVisitor : +operation1()
+ConcreteVisitor : +operation2()
+
+Element : +accept(visitor: Visitor)
+ConcreteElement : +accept(visitor: Visitor)
+
+ObjectStructure : elements: List<Element>
+
+Visitor <|-- ConcreteVisitor
+Element <|-- ConcreteElement
+
+Visitor <.. Element
+ObjectStructure o-- Element
+
+ObjectStructure <.. Client
+Visitor <.. Client
+
+@enduml
