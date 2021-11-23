@@ -1,0 +1,22 @@
+@startuml
+
+abstract class Expressions
+class VarExpression
+class SymbolExpression
+class SubExpression
+class AddExpression
+class Calculate
+class Client
+
+Expressions : +interpret()
+Expressions <|-- VarExpression
+Expressions <|--o SymbolExpression
+SymbolExpression <|-- SubExpression
+SymbolExpression <|-- AddExpression
+Calculate o-- Expressions
+Calculate <.. Client
+
+
+
+
+@enduml

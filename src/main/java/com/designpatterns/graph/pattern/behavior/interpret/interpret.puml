@@ -1,0 +1,15 @@
+@startuml
+
+abstract class AbstractExpression
+class TerminalExpression
+class NonTerminalExpression
+class Context
+class Client
+
+AbstractExpression : +interpret(context Context)
+AbstractExpression <|-- TerminalExpression
+AbstractExpression <|--o NonTerminalExpression
+Context <.. Client
+AbstractExpression <.. Client
+
+@enduml
