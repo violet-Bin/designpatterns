@@ -1,0 +1,20 @@
+@startuml
+
+abstract Handler
+class ConcreteHandlerA
+class ConcreteHandlerB
+class Request
+class Client
+
+Handler : -successor:Handler
+Handler : +processRequest():void
+
+Handler o-- Handler
+Handler <|-- ConcreteHandlerA
+Handler <|-- ConcreteHandlerB
+
+Request <.. Handler
+Request <.. Client
+Handler <.. Client
+
+@enduml

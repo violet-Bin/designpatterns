@@ -1,0 +1,26 @@
+@startuml
+
+interface StrategyA
+interface StrategyB
+class ConcreteStrategyA1
+class ConcreteStrategyA2
+class ConcreteStrategyB1
+class ConcreteStrategyB2
+class Context
+
+StrategyA : +operation1()
+StrategyA : +operation2()
+StrategyB : +operation1()
+StrategyB : +operation2()
+
+StrategyA <|.. ConcreteStrategyA1
+StrategyA <|.. ConcreteStrategyA2
+StrategyB <|.. ConcreteStrategyB1
+StrategyB <|.. ConcreteStrategyB2
+
+Context o-- StrategyA
+Context o-- StrategyB
+
+Context : -strategy1: StrategyA
+Context : -strategy2: StrategyB
+@enduml
